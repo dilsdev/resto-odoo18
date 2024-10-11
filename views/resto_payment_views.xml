@@ -1,0 +1,48 @@
+<!-- resto/views/resto_payment_views.xml -->
+<odoo>
+    
+    <!-- Action for Resto Payments -->
+    <record id="action_resto_payment_list" model="ir.actions.act_window">
+        <field name="name">Payment List</field>
+        <field name="res_model">resto.payment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Tree View for Resto Payments -->
+    <record id="view_resto_payment_tree" model="ir.ui.view">
+        <field name="name">resto.payment.tree</field>
+        <field name="model">resto.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Payment List">
+                <field name="order_id"/>
+                <field name="payment_method"/>
+                <field name="amount_due"/>
+                <field name="amount_paid"/>
+                <field name="payment_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Resto Payments -->
+    <record id="view_resto_payment_form" model="ir.ui.view">
+        <field name="name">resto.payment.form</field>
+        <field name="model">resto.payment</field>
+        <field name="arch" type="xml">
+            <form string="Payment Form">
+                <sheet>
+                    <group>
+                        <field name="order_id"/>
+                        <field name="payment_method"/>
+                        <field name="amount_due" readonly="1"/>
+                        <field name="amount_paid"/>
+                        <field name="payment_status" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_payment" name="Payments" parent="menu_resto_root" sequence="5" action="action_resto_payment_list"/>
+
+</odoo>

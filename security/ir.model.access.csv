@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_resto_order,access_resto_order,model_resto_order,,1,1,1,1
+access_resto_order_line,access_resto_order_line,model_resto_order_line,,1,1,1,1
+access_resto_payment,access_resto_payment,model_resto_payment,,1,1,1,1
+access_resto_report,access_resto_report,model_resto_report,,1,1,1,1
+access_resto_table,access_resto_table,model_resto_table,,1,1,1,1
+access_resto_reservation,access_resto_reservation,model_resto_reservation,,1,1,1,1

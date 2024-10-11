@@ -1,0 +1,15 @@
+<!-- resto/views/resto_customer_views.xml -->
+<odoo>
+    <!-- Action for Resto Customers -->
+    <record id="action_resto_customer_list" model="ir.actions.act_window">
+        <field name="name">Customer List</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- hr.employee -->
+
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_customer" name="Customers" parent="menu_resto_root" sequence="3"/>
+    <menuitem id="menu_resto_customer_list" name="Customer List" parent="menu_resto_customer" action="action_resto_customer_list"/>
+</odoo>

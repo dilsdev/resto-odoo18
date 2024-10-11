@@ -1,0 +1,52 @@
+<odoo>
+    <!-- Action for Resto Reservations -->
+    <record id="action_resto_reservation_list" model="ir.actions.act_window">
+        <field name="name">Reservation List</field>
+        <field name="res_model">resto.reservation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Tree View for Resto Reservations -->
+    <record id="view_resto_reservation_tree" model="ir.ui.view">
+        <field name="name">resto.reservation.tree</field>
+        <field name="model">resto.reservation</field>
+        <field name="arch" type="xml">
+            <tree string="Reservation List">
+                <field name="customer_id"/>
+                <field name="table_id"/>
+                <field name="reservation_date"/>
+                <field name="guest_count"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Resto Reservations -->
+    <record id="view_resto_reservation_form" model="ir.ui.view">
+        <field name="name">resto.reservation.form</field>
+        <field name="model">resto.reservation</field>
+        <field name="arch" type="xml">
+            <form string="Reservation Form">
+                <sheet>
+                    <group>
+                        <field name="customer_id"/>
+                        <field name="phone_number"/>
+                        <field name="email"/>
+                        <field name="table_id"/>
+                        <field name="reservation_date"/>
+                        <field name="guest_count"/>
+                        <field name="special_request"/>
+                        <field name="status"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" type="object" string="Confirm" class="btn-primary"/>
+                        <button name="action_cancel" type="object" string="Cancel" class="btn-secondary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_reservation" name="Reservations" parent="menu_resto_root" sequence="9" action="action_resto_reservation_list"/>
+</odoo>

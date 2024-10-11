@@ -1,0 +1,44 @@
+<!-- resto/views/resto_table_views.xml -->
+<odoo>
+    <!-- Action for Resto Tables -->
+    <record id="action_resto_table_list" model="ir.actions.act_window">
+        <field name="name">Table List</field>
+        <field name="res_model">resto.table</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Tree View for Resto Tables -->
+    <record id="view_resto_table_tree" model="ir.ui.view">
+        <field name="name">resto.table.tree</field>
+        <field name="model">resto.table</field>
+        <field name="arch" type="xml">
+            <tree string="Table List">
+                <field name="table_number"/>
+                <field name="capacity"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Form View for Resto Tables -->
+    <record id="view_resto_table_form" model="ir.ui.view">
+        <field name="name">resto.table.form</field>
+        <field name="model">resto.table</field>
+        <field name="arch" type="xml">
+            <form string="Table Form">
+                <sheet>
+                    <group>
+                        <field name="table_number"/>
+                        <field name="capacity"/>
+                        <field name="status"/>
+                    </group>
+                    <footer>
+                        <button name="set_reserved" type="object" string="Reserve" class="btn-primary"/>
+                        <button name="set_occupied" type="object" string="Occupy" class="btn-success"/>
+                        <button name="set_empty" type="object" string="Empty" class="btn-secondary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_table" name="Tables" parent="menu_resto_root" sequence="8" action="action_resto_table_list"/>
+</odoo>

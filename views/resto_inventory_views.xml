@@ -1,0 +1,21 @@
+<!-- resto/views/resto_inventory_views.xml -->
+<odoo>
+    <!-- Action for Resto Inventory -->
+    <record id="action_resto_inventory_list" model="ir.actions.act_window">
+        <field name="name">Inventory List</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action for Resto Inventory Categories -->
+    <record id="action_resto_inventory_category_list" model="ir.actions.act_window">
+        <field name="name">Inventory Categories</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_inventory" name="Inventory" parent="menu_resto_root" sequence="6"/>
+    <menuitem id="menu_resto_inventory_list" name="Inventory List" parent="menu_resto_inventory" action="action_resto_inventory_list"/>
+    <menuitem id="menu_resto_inventory_category" name="Inventory Categories" parent="menu_resto_inventory" action="action_resto_inventory_category_list"/>
+</odoo>

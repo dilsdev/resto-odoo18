@@ -1,0 +1,32 @@
+<!-- resto/views/resto_report_views.xml -->
+<odoo>
+    <!-- Form View for Resto Report -->
+    <record id="view_resto_report_form" model="ir.ui.view">
+        <field name="name">resto.report.form</field>
+        <field name="model">resto.report</field>
+        <field name="arch" type="xml">
+            <form string="Generate Report">
+                <sheet>
+                    <group>
+                        <field name="report_type"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Generate Report" type="object" class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_resto_report" model="ir.actions.act_window">
+        <field name="name">Generate Report</field>
+        <field name="res_model">resto.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_resto_report" name="Reports" parent="menu_resto_root" sequence="7" action="action_resto_report"/>
+</odoo>
