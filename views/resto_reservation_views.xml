@@ -3,21 +3,21 @@
     <record id="action_resto_reservation_list" model="ir.actions.act_window">
         <field name="name">Reservation List</field>
         <field name="res_model">resto.reservation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     
-    <!-- Tree View for Resto Reservations -->
-    <record id="view_resto_reservation_tree" model="ir.ui.view">
-        <field name="name">resto.reservation.tree</field>
+    <!-- List View for Resto Reservations -->
+    <record id="view_resto_reservation_list" model="ir.ui.view">
+        <field name="name">resto.reservation.list</field>
         <field name="model">resto.reservation</field>
         <field name="arch" type="xml">
-            <tree string="Reservation List">
+            <list string="Reservation List">
                 <field name="customer_id"/>
                 <field name="table_id"/>
                 <field name="reservation_date"/>
                 <field name="guest_count"/>
                 <field name="status"/>
-            </tree>
+            </list>
         </field>
     </record>
 

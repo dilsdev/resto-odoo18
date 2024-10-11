@@ -3,21 +3,21 @@
     <record id="action_resto_order_list" model="ir.actions.act_window">
         <field name="name">Order List</field>
         <field name="res_model">resto.order</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
-    <!-- Tree View for Resto Orders -->
-    <record id="view_resto_order_tree" model="ir.ui.view">
-        <field name="name">resto.order.tree</field>
+    <!-- List View for Resto Orders -->
+    <record id="view_resto_order_list" model="ir.ui.view">
+        <field name="name">resto.order.list</field>
         <field name="model">resto.order</field>
         <field name="arch" type="xml">
-            <tree string="Order List">
+            <list string="Order List">
                 <field name="name"/>
                 <field name="customer_id"/>
                 <field name="date_order"/>
                 <field name="total_amount"/>
                 <field name="status"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -43,12 +43,12 @@
                     </group>
                     <group string="Order Lines">
                         <field name="order_line_ids">
-                            <tree editable="bottom">
+                            <list editable="bottom">
                                 <field name="product_id"/>
                                 <field name="product_qty"/>
                                 <field name="price_unit"/>
                                 <field name="price_total"/>
-                            </tree>
+                            </list>
                         </field>
                     </group>
                     <group>
@@ -60,17 +60,17 @@
         </field>
     </record>
 
-    <!-- Tree View for Resto Order Lines -->
-    <record id="view_resto_order_line_tree" model="ir.ui.view">
-        <field name="name">resto.order.line.tree</field>
+    <!-- List View for Resto Order Lines -->
+    <record id="view_resto_order_line_list" model="ir.ui.view">
+        <field name="name">resto.order.line.list</field>
         <field name="model">resto.order.line</field>
         <field name="arch" type="xml">
-            <tree string="Order Lines">
+            <list string="Order Lines">
                 <field name="product_id"/>
                 <field name="product_qty"/>
                 <field name="price_unit"/>
                 <field name="price_total"/>
-            </tree>
+            </list>
         </field>
     </record>
 

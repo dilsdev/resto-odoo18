@@ -1,25 +1,24 @@
 <!-- resto/views/resto_payment_views.xml -->
 <odoo>
-    
     <!-- Action for Resto Payments -->
     <record id="action_resto_payment_list" model="ir.actions.act_window">
         <field name="name">Payment List</field>
         <field name="res_model">resto.payment</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field> <!-- Ganti tree menjadi list -->
     </record>
-    
-    <!-- Tree View for Resto Payments -->
-    <record id="view_resto_payment_tree" model="ir.ui.view">
-        <field name="name">resto.payment.tree</field>
+
+    <!-- List View for Resto Payments -->
+    <record id="view_resto_payment_list" model="ir.ui.view"> <!-- Ganti id dari view_tree menjadi view_list -->
+        <field name="name">resto.payment.list</field> <!-- Ganti nama dari tree ke list -->
         <field name="model">resto.payment</field>
         <field name="arch" type="xml">
-            <tree string="Payment List">
+            <list string="Payment List"> <!-- Pastikan menggunakan list -->
                 <field name="order_id"/>
                 <field name="payment_method"/>
                 <field name="amount_due"/>
                 <field name="amount_paid"/>
                 <field name="payment_status"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -44,5 +43,4 @@
 
     <!-- Menu Items -->
     <menuitem id="menu_resto_payment" name="Payments" parent="menu_resto_root" sequence="5" action="action_resto_payment_list"/>
-
 </odoo>
