@@ -5,14 +5,13 @@ class RestoReservation(models.Model):
     _description = 'Resto Reservation'
 
     customer_id = fields.Many2one('res.partner', string='Customer', required=True)
-    table_id = fields.Many2one('resto.table', string='Reserved Table', required=True)
+    table_id = fields.Many2one('resto.table', string='Reserved Table')
     reservation_date = fields.Datetime(string='Reservation Date and Time', required=True)
     status = fields.Selection([
         ('confirmed', 'Confirmed'),
         ('cancelled', 'Cancelled')
     ], string='Status', default='confirmed')
 
-    # New fields added
     phone_number = fields.Char(string='Customer Phone Number')
     email = fields.Char(string='Customer Email')
     guest_count = fields.Integer(string='Number of Guests', required=True)

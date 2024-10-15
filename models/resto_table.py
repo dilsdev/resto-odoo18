@@ -1,5 +1,5 @@
 # resto/models/resto_table.py
-from odoo import models, fields
+from odoo import models, fields, api
 
 class RestoTable(models.Model):
     _name = 'resto.table'
